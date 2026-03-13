@@ -80,64 +80,84 @@ project/
 ├── vite.config.ts             # Vite configuration
 └── tailwind.config.js         # TailwindCSS configuration
 ```
+Setup Instructions
+Prerequisites
 
-## Setup Instructions
+Make sure the following are installed:
 
-### Prerequisites
+Node.js (v16 or higher)
 
-- Node.js 16+ and npm
-- MongoDB server running locally on `mongodb://localhost:27017`
+npm
 
-### Installation
+MongoDB
 
-1. **Clone and install dependencies**:
-   ```bash
-   npm install
-   ```
+Check versions:
 
-2. **Configure environment variables** in `.env`:
-   ```
-   PORT=5000
-   MONGO_URI=mongodb://localhost:27017/daily-task-management
-   NODE_ENV=development
+node -v
+npm -v
+Installation
 
-   EMAIL_USER=your-email@gmail.com
-   EMAIL_PASS=your-app-password
+Clone the repository:
 
-   CRON_TIME=59 23 * * *
-   JWT_SECRET=your_jwt_secret_key_here_change_in_production
-   ```
+git clone <repository-url>
+cd Well_TODO
 
-3. **Start MongoDB** (if running locally):
-   ```bash
-   mongod
-   ```
+Install dependencies:
 
-4. **Run the application**:
-   - **Development (both frontend and backend)**:
-     ```bash
-     npm run dev
-     ```
-   - **Backend only**:
-     ```bash
-     npm run dev:server
-     ```
-   - **Frontend only**:
-     ```bash
-     npm run dev:client
-     ```
+npm install
+Environment Variables
 
-5. **Build for production**:
-   ```bash
-   npm run build
-   ```
+Create a .env file in the project root.
 
-6. **Production mode**:
-   ```bash
-   npm start
-   ```
+Example configuration:
 
-## API Documentation
+PORT=5000
+
+MONGO_URI=mongodb://localhost:27017/Well_TODO
+
+NODE_ENV=development
+
+JWT_SECRET=your_secret_key
+
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-email-password
+
+CRON_TIME=59 23 * * *
+Start MongoDB
+
+If running MongoDB locally:
+
+mongod
+
+MongoDB will run on:
+
+mongodb://localhost:27017
+Running the Application
+Start Backend
+
+Navigate to the backend folder and run:
+
+node server.js
+
+Backend runs on:
+
+http://localhost:5000
+Start Frontend
+
+Navigate to the frontend folder and run:
+
+npm run dev
+
+Frontend runs on:
+
+http://localhost:5173
+Build Frontend
+
+To create a production build:
+
+npm run build
+
+The build output will be created in the dist folder.
 
 ### Authentication Endpoints
 
